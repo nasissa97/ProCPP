@@ -1,48 +1,38 @@
 #ifndef PERSON_HPP
 #define PERSON_HPP
 
+#include <compare>
+#include <memory>
 #include <string>
-#include <string_view>
 
 class Person {
  public:
   // Default ctor
+
   Person();
-  // Ideal Ctor
-  Person(std::string_view firstName,
-         std::string_view lastName);
+  Person(std::string firstName, std::string lastName);
+  Person(std::string firstName, std::string lastName, std::string initials);
+  ~Person();
+  Person(const Person& src);
+  Person(Person&&) noexcept;
+  Person& operator=(const Person& rhs);
+  Person& operator=(Person&&) noexcept;
 
-  Person(std::string_view firstName,
-         std::string_view lastName,
-         std::string_view initials);
+  const std::string& getFirstName() const;
+  void setFirstName(std::string firstName);
 
-  // Copy Ctor
-  Person(const Person& src) = default;
+  const std::string& getLastName() const;
+  void setLastName(std::string lastName);
 
-  // Assignment Operator
-  Person& operator=(const Person& rhs) = default;
-  // DeCtor
-  ~Person() = default;
+  const std::string& getInitials() const;
+  void setInitials(std::string initials);
 
-  // Getter & Setter FirstName
-  std::string getFirstName() const;
-
-  void setFirstName(std::string_view name);
-
-  // Getter & Setter LastName
-  std::string getLastName() const;
-
-  void setLastName(std::string_view name);
-
-  // Getter & Setter Initials
-  std::string getInitials() const;
-
-  void setInitials(std::string_view initials);
+  [[nodiscard]] bool operator==(const Person& rhs) const;
+  [[nodiscard]] std::partial_ordering operator<=>(const Person& rhs) const;
 
  private:
-  std::string m_firstName{""};
-  std::string m_lastName{""};
-  std::string m_initials{""};
+  class Impl;
+  std::unique_ptr<Impl> m_impl;
 };
 
 #endif
