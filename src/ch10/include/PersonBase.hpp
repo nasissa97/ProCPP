@@ -19,6 +19,8 @@ class PersonBase {
 
   const std::string& getInitials() const;
 
+  virtual const std::string toString() const;
+
   [[nodiscard]] bool operator==(const PersonBase& rhs) const;
   [[nodiscard]] std::partial_ordering operator<=>(const PersonBase& rhs) const;
 

@@ -42,6 +42,10 @@ const std::string& PersonBase::getInitials() const {
   return m_initials;
 }
 
+const std::string PersonBase::toString() const {
+  return std::format("{} {}", m_firstName, m_lastName);
+}
+
 bool PersonBase::operator==(const PersonBase& rhs) const {
   return m_lastName == rhs.getLastName();
 }

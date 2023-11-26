@@ -1,10 +1,14 @@
 #include <gtest/gtest.h>
 #include "PersonBase.hpp"
 
+#include <format>
+#include <string>
+
 using namespace ::testing;
 class PersonBaseTestSuite : public Test {
 protected:
   HR::PersonBase person{"John", "Doe"};
+  std::string personExpected = std::format("{} {}", person.getFirstName(), person.getLastName());
 };
 
 TEST_F(PersonBaseTestSuite, PersonBaseInstance) {
@@ -28,4 +32,7 @@ TEST_F(PersonBaseTestSuite, ComparisonOperators) {
   EXPECT_EQ(true, person != person2);
 }
 
+TEST_F(PersonBaseTestSuite, ToString) {
+  EXPECT_EQ(personExpected, person.toString());
 
+}

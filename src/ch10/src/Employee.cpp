@@ -16,4 +16,8 @@ const std::string& Employee::getEmployeeId() const {
   return m_employeeId;
 }
 
+const std::string Employee::toString() const {
+  return std::format("{} {} {}", getFirstName(), getLastName(), m_employeeId);
+}
+
 };  // namespace HR
