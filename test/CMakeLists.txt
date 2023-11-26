@@ -11,8 +11,15 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(unit_tests
  person_test.cpp
+ "${CMAKE_CURRENT_SOURCE_DIR}/ch10/PersonBaseTest.cpp"
 )
-target_link_libraries(unit_tests PUBLIC person_static  gtest_main gmock)
+target_link_libraries(unit_tests 
+  PUBLIC 
+  person_static  
+  ch10_static
+  gtest_main gmock
+)
+
 include(GoogleTest)
 gtest_discover_tests(unit_tests)
 
