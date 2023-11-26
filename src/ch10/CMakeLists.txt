@@ -1,4 +1,10 @@
-add_library(ch10_obj OBJECT src/PersonBase.cpp)
+add_library(ch10_obj 
+  OBJECT 
+  src/PersonBase.cpp
+  src/Employee.cpp
+  src/Manager.cpp
+  src/Director.cpp
+)
 
 target_include_directories(ch10_obj PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
