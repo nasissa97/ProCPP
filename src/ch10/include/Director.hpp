@@ -3,10 +3,10 @@
 
 #include <string>
 
-#include "Employee.hpp"
+#include "Manager.hpp"
 
 namespace HR {
-class Director : public Employee {
+class Director : public Manager {
  public:
   Director();
   Director(std::string firstName, std::string lastName, std::string employeeId);

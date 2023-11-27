@@ -2,7 +2,6 @@
 #include "PersonBase.hpp"
 
 #include <format>
-#include <string>
 
 using namespace ::testing;
 class PersonBaseTestSuite : public Test {
