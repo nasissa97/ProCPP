@@ -1,11 +1,14 @@
 #ifndef KEYVALUEPAIR_HPP
 #define KEYVALUEPAIR_HPP
+
+#include <utility>
+
 namespace templates {
 template<typename K, typename V>
 class KeyValuePair {
  public:
   KeyValuePair(K key, V value)
-   : m_key{ key }, m_value{ value }
+   : m_key{ std::move(key) }, m_value{ std::move(value) }
   {}
 
  
