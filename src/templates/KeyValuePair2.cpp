@@ -1,6 +1,3 @@
-#ifndef KEYVALUEPAIR2_HPP
-#define KEYVALUEPAIR2_HPP
-
 #include <concepts>
 #include <iostream>
 #include <string>
@@ -41,5 +38,3 @@ class KeyValuePair2 {
   V m_value;
 };
 };
-
-#endif

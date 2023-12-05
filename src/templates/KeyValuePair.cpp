@@ -1,6 +1,3 @@
-#ifndef KEYVALUEPAIR_HPP
-#define KEYVALUEPAIR_HPP
-
 #include <iostream>
 #include <string>
 #include <utility>
@@ -73,5 +70,3 @@ class KeyValuePair<const char*, const char*> {
   std::string  m_value;
 };
 };
-
-#endif
