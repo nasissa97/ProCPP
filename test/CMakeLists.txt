@@ -13,9 +13,13 @@ add_executable(unit_tests
  person_test.cpp
  "${CMAKE_CURRENT_SOURCE_DIR}/ch10/PersonBaseTest.cpp"
  "${CMAKE_CURRENT_SOURCE_DIR}/ch10/PersonDerivedTest.cpp"
+ "${CMAKE_CURRENT_SOURCE_DIR}/templates/KeyValuePairTest.cpp"
+ "${CMAKE_CURRENT_SOURCE_DIR}/templates/ConcatTest.cpp"
+ "${CMAKE_CURRENT_SOURCE_DIR}/templates/FindTest.cpp"
 )
 target_link_libraries(unit_tests 
   PUBLIC 
+  templates_object
   person_static  
   ch10_static
   gtest_main gmock
